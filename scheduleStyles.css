@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    font-family:"Lato", "Open Sans", Arial, sans-serif;
+}
+
+.primary-header{
+  color: #fff;
+  background-color: #4a5e5e;
+  padding-bottom: 10px;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.heading {
+    text-align: center;
+    font-size: 9vh;
+    letter-spacing: .5px;
+    padding: 6px 0;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.dates {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 1.5vw;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.dates a {
+    color: white;
+    text-decoration: none;
+}
+
+.session {
+    padding: 1em;
+}
+
+.schedule {
+    display: grid;
+    width:90vw;
+    margin: 2vh auto;
+	grid-gap: .5em;
+	grid-template-rows:
+		[weekDays] auto
+		[time-0830] auto
+		[time-0900] auto
+		[time-0930] auto
+		[time-1000] auto
+		[time-1030] auto
+		[time-1100] auto
+		[time-1130] auto
+		[time-1200] auto
+        [time-1230] auto
+        [time-1300] auto
+        [time-1330] auto
+        [time-1400] auto
+        [time-1430] auto
+        [time-1500] auto
+        [time-1530] auto
+	;
+	grid-template-columns:
+		[times] 7em
+		[track-1-start] 1fr
+		[track-1-end track-2-start] 1fr
+		[track-2-end track-3-start] 1fr
+		[track-3-end track-4-start] 1fr
+        [track-4-end track-5-start] 1fr
+		[track-5-end]
+	;
+}
+
+.title, span.track, .time {
+	margin: 0;
+	font-size: 2em;
+}
+
+.time-slot {
+   	margin: 0;
+    text-align: right;
+}
+
+.track-slot {
+    font-weight: bold;
+    font-size: 1.35em;
+    text-align: center;
+}
+
+span {
+	display: block;
+}
+
+.mdcp-102-rnf, .gdpw-153-rna{
+	background-color: #687f00;
+	color: #fff;
+}
+
+.mdcp-102-rne {
+	background-color: #544D69;
+	color: #fff;
+}
+
+.mdcp-102-rnb {
+	background-color: #c35500;
+	color: #fff;
+}
+
+.gdpw-113-rna {
+	background-color: #004401;
+	color: #fff;
+}
+
+.wddm-117-rna {
+	background-color: #247bf2;
+	color: #fff;
+}
+
+.igs, .north {
+	font-weight: 900;
+	padding: 4px;
+	margin-top: 10px;
+}
+
+.igs {
+	color: white;
+	background-color: orangered;
+}
+
+.north {
+	color: yellow;
+	background-color: cornflowerblue;
+}
+
+@media screen and (min-width:700px) {
+		
+	.track-slot {
+		display: block;
+		padding: 10px 5px;
+        background-color: #d0d0d0;
+	}
+    
+	.session {
+		margin: 0;
+	}
+}
