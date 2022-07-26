@@ -118,8 +118,8 @@ span {
 .mdcp-102-nf, .gdpw-153-na, .wddm-117-nb {
 	background-color: #687f00;
 	color: #fff;
-	position: relative;
-    top: -161px;
+	/* position: relative;
+    top: -161px; */
 }
 
 .gdpw-113-na {
@@ -173,10 +173,10 @@ span {
 		grid-template-columns:
 			[times] 7em
 			[track-1-start] .5fr    			/* Monday column */
-			[track-1-end track-2-start] 2fr 	/* Tuesday column */
-			[track-2-end track-3-start] 2fr 	/* Wednesday column */
+			[track-1-end track-2-start] 1.5fr 	/* Tuesday column */
+			[track-2-end track-3-start] 1.5fr 	/* Wednesday column */
 			[track-3-end track-4-start] .5fr 	/* Thursday column */
-			[track-4-end track-5-start] .5fr 	/* Friday column */
+			[track-4-end track-5-start] 1.5fr 	/* Friday column */
 			[track-5-end]
 		;
 	}
@@ -187,7 +187,7 @@ span {
 		display:block;
 	}
 
-	.mdcp-102-rnf, .gdpw-153-rna{
+	.mdcp-102-ne, .gdpw-113-na{
 		top: 0;
 	}
 
