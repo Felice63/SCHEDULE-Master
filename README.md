@@ -1,4 +1,4 @@
-[Demo](https://felice63.github.io/WINTER-SCHEDULE-2022-main/)
+[Demo](https://felice63.github.io/SCHEDULE-Master/)
 
 # SCHEDULE-2022-main
 My Teaching schedule
