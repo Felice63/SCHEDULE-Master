@@ -48,9 +48,40 @@ h1, h2 {
     padding: 1em;
 }
 
+/* Named Grid lines */
+/* SEE: developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines  */
+/*  Square bracket are the line names, followed by their width */
+
 .schedule {
-    display: flex;
-	flex-direction: column;
+	display: grid;
+
+	grid-template-columns: 
+		[times] 7em							/* Times column */
+		[track-1-start] .5fr    			/* Monday column */
+		[track-1-end track-2-start] 1.5fr 	/* Tuesday column */
+		[track-2-end track-3-start] 1.5fr 	/* Wednesday column */
+		[track-3-end track-4-start] .5fr 	/* Thursday column */
+		[track-4-end track-5-start] 1.5fr 	/* Friday column */
+		[track-5-end];
+
+	grid-template-rows:
+		[weekDays] auto
+		[time-0830] auto
+		[time-0900] auto
+		[time-0930] auto
+		[time-1000] auto
+		[time-1030] auto
+		[time-1100] auto
+		[time-1130] auto
+		[time-1200] auto
+        [time-1230] auto
+        [time-1300] auto
+        [time-1330] auto
+        [time-1400] auto
+        [time-1430] auto
+        [time-1500] auto
+        [time-1530] auto;
+
     width:90vw;
     margin: 2vh auto;
 	grid-gap: .5em;
@@ -59,10 +90,6 @@ h1, h2 {
 .title, span.track, .time {
 	margin: 0;
 	font-size: 2em;
-}
-
-.time-slot {
-   	display: none;
 }
 
 .Monday, .Tuesday, .Wednesday, .Thursday, .Friday {
@@ -79,8 +106,6 @@ h1, h2 {
 
 .Wednesday {
 	grid-column: track-3;
-	position: relative;
-    top: 300px;
 }
 
 .Thursday {
@@ -89,6 +114,15 @@ h1, h2 {
 
 .Friday {
 	grid-column: track-5;
+}
+
+/* Times */
+
+.time-slot {
+	grid-column: times;
+	margin: 0;
+	text-align: left;
+	display:block;
 }
 
 .track-slot {
@@ -111,24 +145,34 @@ span {
 }
 
 .mdcp-102-ne {
+	grid-column: track-2; 
+	grid-row: time-1230 / time-1530;
 	background-color: #544D69;
 	color: #fff;
 }
 
-.mdcp-102-nf, .gdpw-153-na, .wddm-117-nb {
-	background-color: #687f00;
-	color: #fff;
-	/* position: relative;
-    top: -161px; */
+.mdcp-102-nf, .gdpw-153-na{
+	/* ... */
 }
 
 .gdpw-113-na {
+	grid-column: track-3; 
+	grid-row: time-0900 / time-1200;
 	background-color: #004401;
 	color: #fff;
 }
 
 .wddm-117-na {
+	grid-column: track-3; 
+	grid-row: time-1230 / time-1530;
 	background-color: #247bf2;
+	color: #fff;
+}
+
+.wddm-117-nb {
+	grid-column: track-5;
+	grid-row: time-0900 / time-1200;
+	background-color: #687f00;
 	color: #fff;
 }
 
@@ -148,51 +192,47 @@ span {
 	background-color: cornflowerblue;
 }
 
-@media screen and (min-width:850px) {
+/*
+For media query, re-define the whole grid
+*/
+
+@media screen and (max-width:850px) {
 
 	.schedule {
-		display: grid;
-		grid-template-rows:
-		[weekDays] auto
-		[time-0830] auto
-		[time-0900] auto
-		[time-0930] auto
-		[time-1000] auto
-		[time-1030] auto
-		[time-1100] auto
-		[time-1130] auto
-		[time-1200] auto
-        [time-1230] auto
-        [time-1300] auto
-        [time-1330] auto
-        [time-1400] auto
-        [time-1430] auto
-        [time-1500] auto
-        [time-1530] auto
-	;
-		grid-template-columns:
-			[times] 7em
-			[track-1-start] .5fr    			/* Monday column */
-			[track-1-end track-2-start] 1.5fr 	/* Tuesday column */
-			[track-2-end track-3-start] 1.5fr 	/* Wednesday column */
-			[track-3-end track-4-start] .5fr 	/* Thursday column */
-			[track-4-end track-5-start] 1.5fr 	/* Friday column */
-			[track-5-end]
-		;
+		display: flex;
+		flex-direction: column;
 	}
 
-	.time-slot {
-		margin: 0;
-		text-align: left;
-		display:block;
+	.time-slot, .Monday, .Thursday{
+		display: none;
 	}
 
-	.mdcp-102-ne, .gdpw-113-na{
-		top: 0;
+	.Tuesday {
+		order: 1;
+	}
+
+	.mdcp-102-ne {
+		order: 2;
 	}
 
 	.Wednesday {
-		top: 0;
+		order: 3;
 	}
 
+	.gdpw-113-na {
+		order: 4;
+	}
+
+	.wddm-117-na {
+		order: 5;
+	}
+
+	.Friday {
+		order: 6;
+	}
+
+	.wddm-117-nb {
+		order: 7;
+	}
 }
+
