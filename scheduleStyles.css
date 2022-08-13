@@ -31,6 +31,14 @@ h1, h2 {
     font-weight: 400;
 }
 
+.dateToday>h1 {
+	text-align: center;
+    padding: 20px 0;
+    color: #666;
+    font-size: 200%;
+    border-bottom: 8px solid rgb(192, 189, 189);
+}
+
 .dates {
     margin: 16px 0;
     text-align: center;
