@@ -1,4 +1,4 @@
 [Demo](https://felice63.github.io/SCHEDULE-Master/)
 
 # SCHEDULE-main
-My Teaching schedule
+This is my teaching schedule, updated for each new term.
